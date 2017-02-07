@@ -17,7 +17,7 @@ class m170205_233628__inital extends Migration
             'id' =>  Schema::TYPE_PK . ' NOT NULL',
             'created_at' =>  Schema::TYPE_TIMESTAMP . ' NOT NULL',
             'his_picture_url' =>  Schema::TYPE_STRING,
-            'her_picture-url' => Schema::TYPE_STRING,
+            'her_picture_url' => Schema::TYPE_STRING,
         ]);
 
 
