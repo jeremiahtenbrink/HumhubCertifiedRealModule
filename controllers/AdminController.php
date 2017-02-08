@@ -5,6 +5,7 @@ namespace humhub\modules\certified\controllers;
 use Yii;
 use humhub\modules\certified\models\AwaitingCertification;
 use humhub\modules\certified\models\AwaitingCertificationSearch;
+use humhub\modules\certified\models\Profile;
 use humhub\components\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,7 +36,7 @@ class AdminController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new AwaitingCertification;
+        $searchModel = new AwaitingCertificationSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -120,5 +121,11 @@ class AdminController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+
+    public function setAwaitingCertification($id)
+    {
+
     }
 }
