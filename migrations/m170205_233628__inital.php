@@ -2,6 +2,7 @@
 
 use yii\db\Migration;
 use yii\db\Schema;
+use yii\db\ActiveRelationTrait;
 
 
 class m170205_233628__inital extends Migration
@@ -19,6 +20,8 @@ class m170205_233628__inital extends Migration
             'his_picture_url' =>  Schema::TYPE_STRING,
             'her_picture_url' => Schema::TYPE_STRING,
         ]);
+        $this->addColumn('awaiting_certification', 'user_id', 'int(11)' );
+        $this->addForeignKey('User ID', 'awaiting_certification', 'user_id', 'user', 'id');
 
 
     }
